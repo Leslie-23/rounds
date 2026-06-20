@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Round",
+    "slug": "round",
+    "scheme": "round",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#16151A"
+      }
+    }
+  }
+}
