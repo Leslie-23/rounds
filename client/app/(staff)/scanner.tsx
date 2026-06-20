@@ -1,4 +1,4 @@
-import { ScanLine } from 'lucide-react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, Text, View } from 'react-native';
 import { Screen } from '@/components/Screen';
 import { colors, radius, spacing, typography } from '@/theme/tokens';
@@ -8,7 +8,7 @@ export default function Scanner() {
     <Screen>
       <Text style={styles.title}>Scan a round</Text>
       <View style={styles.scanner}>
-        <ScanLine size={56} color={colors.accentPrimary} />
+        <Ionicons name="scan-outline" size={56} color={colors.accentPrimary} />
       </View>
       <Text style={styles.copy}>Point the camera at a member QR or use manual PIN entry.</Text>
     </Screen>

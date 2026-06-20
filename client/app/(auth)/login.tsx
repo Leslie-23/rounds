@@ -1,5 +1,5 @@
+import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import { Eye } from 'lucide-react-native';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Screen } from '@/components/Screen';
 import { useSessionStore } from '@/stores/session';
@@ -14,21 +14,22 @@ export default function Login() {
   }
 
   return (
-    <Screen>
+    <Screen scroll>
       <View style={styles.brandRow}>
         <View style={styles.ring} />
         <Text style={styles.wordmark}>round</Text>
       </View>
-      <Text style={styles.title}>Find the room before you order the night.</Text>
-      <Text style={styles.copy}>Sign in to start, scan, manage, or approve rounds.</Text>
+      <Text style={styles.title}>Your next room is already warm.</Text>
+      <Text style={styles.copy}>Five rounds a week across bars and restaurants worth walking into.</Text>
       <View style={styles.form}>
         <TextInput placeholder="Email" placeholderTextColor={colors.textMuted} style={styles.input} />
         <TextInput placeholder="Password" placeholderTextColor={colors.textMuted} secureTextEntry style={styles.input} />
         <Pressable style={styles.primaryButton} onPress={() => enterDemo('member')}>
-          <Eye size={18} color={colors.bgBase} />
+          <Ionicons name="eye-outline" size={18} color={colors.bgBase} />
           <Text style={styles.primaryText}>Enter as member</Text>
         </Pressable>
       </View>
+      <Text style={styles.previewLabel}>Preview elevated access</Text>
       <View style={styles.demoGrid}>
         <Pressable style={styles.demoButton} onPress={() => enterDemo('restaurant_staff')}>
           <Text style={styles.demoText}>Staff</Text>
@@ -77,7 +78,8 @@ const styles = StyleSheet.create({
     minHeight: 54
   },
   primaryText: { color: colors.bgBase, fontSize: 16, fontWeight: '700' },
-  demoGrid: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.lg },
+  previewLabel: { ...typography.data, color: colors.textFaint, marginTop: spacing.xl },
+  demoGrid: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm },
   demoButton: {
     flex: 1,
     alignItems: 'center',
