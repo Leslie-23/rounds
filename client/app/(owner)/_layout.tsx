@@ -1,8 +1,5 @@
-import { Redirect, Stack } from 'expo-router';
-import { useSessionStore } from '@/stores/session';
+import { Stack } from 'expo-router';
 
 export default function OwnerLayout() {
-  const role = useSessionStore((state) => state.user?.role);
-  if (role !== 'restaurant_owner' && role !== 'admin') return <Redirect href="/" />;
   return <Stack screenOptions={{ headerShown: false }} />;
 }
